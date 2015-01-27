@@ -128,25 +128,29 @@ a {
     margin-bottom: 20px;
 }
 
-.section {
-    overflow: hidden;
+section {
     margin-bottom: 30px;
+    overflow: hidden;
     clear: both;
 }
 
-.six-column {
+section .column {
     float: left;
-    width: 340px;
+    box-sizing: border-box;
+    width: 50%;
 }
 
-.first {
-    margin-right: 40px;
+section .column:first-child {
+    padding-right: 10px;
+}
+
+section .column:last-child {
+    padding-left: 10px;
 }
 
 .anchor {
     padding-top: 60px;
     opacity: 1;
-
 }
 
 .blue {
@@ -171,5 +175,5 @@ footer {
 
 #top {
     float: right;
-    margin-top: -28px;
+    margin-top: -35px;
 }
