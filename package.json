@@ -1,0 +1,9 @@
+{
+  "name": "george-burdell-portfolio",
+  "version": "1.0.0",
+  "description": "This website has my portfolio and will be used to fascinate recruiters.",
+  "author": "George P Burdell",
+  "dependencies": {
+    "express": "~4.2.0"
+  }
+}
