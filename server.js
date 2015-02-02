@@ -18,6 +18,5 @@ app.use(express.static(config.public_dir));
 var server = app.listen(config.server_port, function() {
 	var host = server.address().address;
 
-	console.log("Server running at http://%s:%s", host,
-		config.server_port);
+	console.log("Server running at http://%s:%s", host,	config.server_port);
 });
