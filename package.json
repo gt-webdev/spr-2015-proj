@@ -1,0 +1,32 @@
+{
+  "name": "gburdell",
+  "version": "1.0.0",
+  "description": "This website has my portfolio and will be used to fascinate recruiters.",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.11.2"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ckucera3/spr-2015-proj.git"
+  },
+  "keywords": [
+    "portfolio",
+    "gtwebdev",
+    "nodejs"
+  ],
+  "author": "George P Burdell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ckucera3/spr-2015-proj/issues"
+  },
+  "homepage": "https://github.com/ckucera3/spr-2015-proj"
+}
