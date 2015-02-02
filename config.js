@@ -3,7 +3,7 @@
 var config = {}
 
 // Server configuration
-config.server_port = 3000;
+config.server_port = process.env.PORT || 3000;
 config.public_dir = './public';
 
 // Set require's return value to config
