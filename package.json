@@ -4,6 +4,7 @@
   "description": "This website has my portfolio and will be used to fascinate recruiters.",
   "author": "George P Burdell",
   "dependencies": {
-    "express": "~4.2.0"
+    "express": "~4.2.0",
+    "node": "v0.10.35"
   }
 }
