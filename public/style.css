@@ -33,6 +33,11 @@ header {
     margin-top: 8px;
 }
 
+#nav li a {
+    transition: 0.3s ease-out opacity;
+    opacity: 0.5;
+}
+
 #nav li a:hover {
     opacity: 1;
 }
@@ -70,7 +75,6 @@ p {
 a {
     color: #000;
     text-decoration: none;
-    opacity: 0.5;
 }
 
 .lead {
@@ -181,4 +185,10 @@ footer {
 #top {
     float: right;
     margin-top: -35px;
+}
+
+.progress {
+    padding: 2px 4px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
 }
