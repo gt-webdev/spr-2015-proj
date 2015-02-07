@@ -208,7 +208,46 @@ footer {
 }
 
 .progress {
-    padding: 2px 4px;
+    box-sizing: border-box;
+    transition: 0.3s ease-in all;
+    border: 1px solid white;
+    position: relative;
+    display: inline-block;
+}
+
+.progress:hover {
     border: 1px solid lightgray;
     border-radius: 3px;
+    cursor: default;
+}
+
+.progress > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    opacity: 0;
+    z-index: -1;
+
+    transition: 0.7s ease all;
+}
+
+.progress:hover > span {
+    opacity: 1;
+}
+
+.progress:hover > span.expert {
+    width: 100%;
+    background-color: lightgreen;
+}
+
+.progress:hover > span.intermediate {
+    width: 60%;
+    background-color: lightblue;
+}
+
+.progress:hover > span.beginner {
+    width: 40%;
+    background-color: lightsalmon;
 }
