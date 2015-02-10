@@ -257,27 +257,24 @@ footer {
 /*------------mobile--------------*/
 
 .mobile-only {
-    display: inherit;
+    display: none;
 }
 
 .desktop-only {
-    display: none;
+    display: inherit;
 }
 
 @media only screen and (max-device-width: 480px) {
     .mobile-only {
-        display: none;
-    }
-
-    .desktop-only {
         display: inherit;
     }
 
-    * {
-        font-size: initial;
+    .desktop-only {
+        display: none;
     }
 
     .wrapper {
+        margin-top: 100px;
         width: 90%;
     }
 
@@ -302,5 +299,27 @@ footer {
 
     p {
         color: #7f7f7f;
+    }
+
+    .progress {
+        font-size: 3em;
+        line-height: 1em;
+    }
+
+
+    /*-----------nav bars-------------*/
+    .anchor {
+        padding-top: 90px;
+    }
+
+    #main-nav {
+        width: 90%;
+    }
+
+    #nav {
+        float: left;
+    }
+    #nav li a {
+        font-size: 2em;
     }
 }
