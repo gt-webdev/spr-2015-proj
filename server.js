@@ -1,13 +1,22 @@
+// Import express and the server configuration file
 var express = require('express');
+var config = require('./config');
+
+// Create the express app
 var app = express();
 
-app.use('/thegoodword', function (request, response) {
-	response.write("TO HELL WITH GEORGIA!!!");
-	response.end();
-});
+// Other routes (middleware)
+app.use('/thegoodword', function(req, res) {
+	res.write("TO HELL WITH GEORGIA!!!");
+	res.end();
+})
 
-app.use(express.static('public'));
+// Use the static file server middleware
+app.use(express.static(config.public_dir));
 
-app.listen(3000, function () {
-	console.log("Site is served on port 3000");
+// Start listening to requests
+var server = app.listen(config.server_port, function() {
+	var host = server.address().address;
+
+	console.log("Server running at http://%s:%s", host,	config.server_port);
 });

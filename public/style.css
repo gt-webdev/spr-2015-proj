@@ -33,6 +33,11 @@ header {
     margin-top: 8px;
 }
 
+#nav li a {
+    transition: 0.3s ease-out opacity;
+    opacity: 0.5;
+}
+
 #nav li a:hover {
     opacity: 1;
 }
@@ -70,7 +75,6 @@ p {
 a {
     color: #000;
     text-decoration: none;
-    opacity: 0.5;
 }
 
 .lead {
@@ -79,6 +83,10 @@ a {
 
 #nav li {
     display: inline-block;
+}
+
+#nav li:active {
+    text-decoration: underline;
 }
 
 #nav li a {
@@ -96,6 +104,11 @@ a {
     float: left;
     margin-right: 5px;
     border-radius: 50%;
+    transition: 0.1s ease-in-out transform;
+}
+
+.social-icon:hover {
+    transform: translate(0, -3px);
 }
 
 @media print {
@@ -117,9 +130,25 @@ a {
     border: 1px solid lightgray;
     border-radius: 2px;
     width: 100px;
+    height: 80px;
     float: right;
     padding: 5px;
     margin-left: 10px;
+    margin: 10px;
+}
+
+.media-thumb {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
+  filter: gray; /* IE5+ */
+  -webkit-filter: grayscale(1); /* Webkit Nightlies & Chrome Canary */
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+}
+
+.media-thumb:hover {
+  filter: none;
+  -webkit-filter: grayscale(0);
+  -webkit-transform: scale(1.1);
 }
 
 .wrapper {
@@ -176,4 +205,121 @@ footer {
 #top {
     float: right;
     margin-top: -35px;
+}
+
+.progress {
+    box-sizing: border-box;
+    transition: 0.3s ease-in all;
+    border: 1px solid white;
+    position: relative;
+    display: inline-block;
+}
+
+.progress:hover {
+    border: 1px solid lightgray;
+    border-radius: 3px;
+    cursor: default;
+}
+
+.progress > span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    opacity: 0;
+    z-index: -1;
+
+    transition: 0.7s ease all;
+}
+
+.progress:hover > span {
+    opacity: 1;
+}
+
+.progress:hover > span.expert {
+    width: 100%;
+    background-color: lightgreen;
+}
+
+.progress:hover > span.intermediate {
+    width: 60%;
+    background-color: lightblue;
+}
+
+.progress:hover > span.beginner {
+    width: 40%;
+    background-color: lightsalmon;
+}
+
+
+
+/*------------mobile--------------*/
+
+.mobile-only {
+    display: none;
+}
+
+.desktop-only {
+    display: inherit;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .mobile-only {
+        display: inherit;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .wrapper {
+        margin-top: 100px;
+        width: 90%;
+    }
+
+    .social-icon {
+        width: 100px;
+        margin-right: 20px;
+    }
+
+    .media-thumb {
+        width: 300px;
+        height: 240px;
+        max-width: 50%;
+        max-height: 50%;
+        filter: gray; /* IE5+ */
+        -webkit-filter: none;
+    }
+
+    section .column {
+        width: 100%;
+        padding: 0px!important;
+    }
+
+    p {
+        color: #7f7f7f;
+    }
+
+    .progress {
+        font-size: 3em;
+        line-height: 1em;
+    }
+
+
+    /*-----------nav bars-------------*/
+    .anchor {
+        padding-top: 90px;
+    }
+
+    #main-nav {
+        width: 90%;
+    }
+
+    #nav {
+        float: left;
+    }
+    #nav li a {
+        font-size: 2em;
+    }
 }
