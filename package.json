@@ -4,7 +4,8 @@
   "description": "This website has my portfolio and will be used to fascinate recruiters.",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.11.2"
+    "express": "^4.11.2",
+    "ejs": "*"
   },
   "engines": {
     "node": "0.10.x"

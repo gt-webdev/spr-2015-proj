@@ -1,0 +1,13 @@
+{
+    "people":[
+        {
+            "name": "jerry",
+            "job": "student"
+        },
+        {
+            "name": "scott",
+            "job": "web developer"
+        }
+    ],
+    "message": "heyyyy people"
+}

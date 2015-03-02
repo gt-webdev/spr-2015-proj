@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Tempalte</title>
+
+    <!-- CSS (load bootstrap from a CDN) -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+</head>
+<body class="container">
+
+    <header>
+        <% include header%>
+    </header>
+
+
+    <div>
+        <h1>This is great</h1>
+        <p>Welcome to templating using EJS</p>
+    </div>
+
+    <ul>
+        Our people include:
+        <% people.forEach(function(person) { %>
+            <li>
+                <%= person.name%>, <%= person.job%>
+            </li>
+        <% }); %>
+    </ul>
+
+    <footer>
+        <% include footer %>
+    </footer>
+</body>
+</html>
