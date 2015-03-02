@@ -1,13 +1,236 @@
 {
-    "people":[
+    "sections":[
         {
-            "name": "jerry",
-            "job": "student"
+            "layout": "double",
+            "subSections": [
+                {
+                    "sectionName": "Education",
+                    "type": "regular",
+                    "items": [
+                        {
+                            "title": "Georgia Institute of Technology",
+                            "subtitle": "Fall 2013 - present",
+                            "description": "B.S. Computer Science, Information Internetworks and Media"                   
+                        },
+                        {
+                            "title": "Metropolitian Community College",
+                            "subtitle": "Fall 2008 - Spring 2012",
+                            "description": "Associate Degree in Information Systems<br>Associate Degree in Computer Science"                   
+                        }
+                    ]
+                },
+                {
+                    "sectionName": "Skills",
+                    "type": "skill",
+                    "skillCategories": [
+                        {
+                            "title": "Technical",
+                            "items": [
+                                {
+                                    "name": "JavaScript",
+                                    "level": "expert"
+                                },
+                                {
+                                    "name": "PHP 5",
+                                    "level": "intermediate"
+                                },
+                                {
+                                    "name": "HTML5",
+                                    "level": "expert"
+                                },
+                                {
+                                    "name": "CSS3",
+                                    "level": "expert"
+                                },
+                                {
+                                    "name": "Java",
+                                    "level": "intermediate"
+                                },
+                                {
+                                    "name": "C#",
+                                    "level": "beginner"
+                                },
+                                {
+                                    "name": "Jade",
+                                    "level": "beginner"
+                                },
+                                {
+                                    "name": "TypeScript",
+                                    "level": "intermediate"
+                                },
+                                {
+                                    "name": "LESS",
+                                    "level": "intermediate"
+                                },
+                                {
+                                    "name": "SCSS",
+                                    "level": "expert"
+                                },
+                                {
+                                    "name": "Stylus",
+                                    "level": "beginner"
+                                },
+                                {
+                                    "name": "AngularJS",
+                                    "level": "expert"
+                                },
+                                {
+                                    "name": "jQuery",
+                                    "level": "intermediate"
+                                },
+                                {
+                                    "name": "IonicFramework",
+                                    "level": "intermediate"
+                                },
+                                {
+                                    "name": "Cordova",
+                                    "level": "beginner"
+                                },
+                                {
+                                    "name": "Node.js",
+                                    "level": "intermediate"
+                                },
+                                {
+                                    "name": "ASP.NET MVC.",
+                                    "level": "beginner"
+                                }
+                            ]
+                        },
+                        {
+                            "title": "Technical",
+                            "items": [
+                                {
+                                    "name": "Photoshop",
+                                    "level": "expert"
+                                },
+                                {
+                                    "name": "Illustrator",
+                                    "level": "expert"
+                                },
+                                {
+                                    "name": "InDesign",
+                                    "level": "expert"
+                                },
+                                {
+                                    "name": "Premier Pro",
+                                    "level": "intermediate"
+                                },
+                                {
+                                    "name": "After Effects",
+                                    "level": "intermediate"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         },
         {
-            "name": "scott",
-            "job": "web developer"
+            "layout": "single",
+            "sectionName": "Experience",
+            "type": "regular",
+            "items": [
+                {
+                    "title": "Software Developer Intern, Tyler Technologies",
+                    "subtitle": "Summer 2014",
+                    "description": "I made a RESTful API for a large Silverlight application with a C# back-end. I also worked on a responsive thin client written in HTML5/CSS/JavaScript which uses the aforementioned API. The core business logic was written in C#, with unit testing done in Jasmine and the MS Unit Testing Framework. The thin-client web app was written in TypeScript, AngularJS, jQuery, Bootstrap, and LESS."                   
+                },
+                {
+                    "title": "Website Designer and Developer, Georgia Tech",
+                    "subtitle": "2013-2014",
+                    "description": "I created a beautiful, engaging, and responsive website and user experience for a web-based project written in PHP. I also wrote a sophisticated PHP survey for a research study."                   
+                },
+                {
+                    "title": "Computer and IT Coordinator, National Youth Science Foundation",
+                    "subtitle": "Summer 2013",
+                    "description": "I coordinated and provided networking, computer access, and IT support services for a month-long, prestigious science camp. My responsibilities also included mentoring students, teaching, organizing, and overseeing classes."                   
+                }
+            ]
+        },
+        {
+            "layout": "single",
+            "sectionName": "Projects",
+            "type": "regular",
+            "items": [
+                {
+                    "title": "LSM Hymnal",
+                    "subtitle": "Beautiful hymnal reader for Android and the web.",
+                    "image": "images/open-hymnal-thumb.jpg",
+                    "imageLink": "http://lsmhymnal.tk/",
+                    "description": "A beautiful e-reader for the LSM hymnal with quick navigation features and a beautiful user interface. Bookmark your favorite hymns and customize the interface with full-screen, dark and light viewing modes."                   
+                },
+                {
+                    "title": "Teleop Catalyst for ROBOTC",
+                    "subtitle": "Programming has never been easier.",
+                    "image": "images/teleop-catalyst-thumb.jpg",
+                    "imageLink": "http://tituswoo.com/project/catalyst/",
+                    "description": "Tele-op Catalyst makes it stupidly easy to create robust teleop (remote control) programs for the FIRST Tech Challenge using a simple but powerful \"click, command, create\" workflow. With Catalyst, you can get your robot running in minutes, with little to no programming experience."                   
+                },
+                {
+                    "title": "The Turing Game",
+                    "subtitle": "Helping people explore issues of identity and stereotypes.",
+                    "image": "images/turing-game-thumb.jpg",
+                    "imageLink": "http://turing.gatech.edu/",
+                    "description": "I overhauled the visual aesthetic and core user experience of a Georgia Tech research project, creating a beautiful and intuitive experience that people love using."                   
+                },
+                {
+                    "title": "Team Up Next",
+                    "subtitle": "Experience the awesome.",
+                    "image": "images/up-next-thumb.jpg",
+                    "imageLink": "http://teamupnext.com/",
+                    "description": "I produced a wide range of promotional and branding material for my robotics team in high school, including: the logo, banners, motion graphics, website theme, social media materials, Chairman's Video, Safety Animation Video, stationary, and more."                   
+                }
+            ]
+        },
+        {
+            "layout": "single",
+            "sectionName": "Leadership",
+            "type": "regular",
+            "items": [
+                {
+                    "title": "<span class='focus'>Technical Director</span>, GT Web Dev",
+                    "description": "I give talks on a variety of web development topics, ranging from the basics of HTML and CSS to advanced topics like building and consuming RESTful web services and making SPA apps. I'm also heavily involved in curriculum development and planning for each semester's talks and events."                   
+                },
+                {
+                    "title": "Cadet Commander, Aircraft Maintenance and Manufacturing Academy",
+                    "description": "I lead and organized a national week-long, residential academy that taught participants about aircraft manufacturing and maintenance on the live production floor. I managed, coordinated, and organized transportation, scheduling, activities, housing, meals, paperwork, special guests, press releases, and a plethora of other logistical tasks. The academy was very successful and lead to an award."                   
+                },
+                {
+                    "title": "Cadet Commander, Harry S. Truman Composite Squadron",
+                    "description": "I lead a squadron of cadets, organized cadet programs, maintained discipline and professionalism, and restructured the squadron to significantly increase engagement and boost attendance. I also co-developed the aerospace education curriculum (which included creating an interactive quiz application, lecture material, activities, handouts, and activities)."                   
+                },
+                {
+                    "title": "Team Image & Chairman's Team Leader, Up Next Robotics",
+                    "description": "I created the core branding for a robotics team, including everything from business cards, to snazzy video intros to a website theme, and produced a 3D animated safety video entered in a competition."                   
+                }
+            ]
+        },
+        {
+            "layout": "single",
+            "sectionName": "Leadership",
+            "type": "regular",
+            "items": [
+                {
+                    "title": "Tyler Tech - FedEx Day 2nd Place Winner",
+                    "description": "I developed a cross-platform, hybrid mobile application that leverages the powerful EnerGov RESTful API I worked on during the internship. I also developed an AngularJS directive that transforms tabular data into a fully responsive, touch friendly grid, complete with toggle controls and intelligent auto-switching based on screen size. Technologies used: JavaScript, AngularJS, Ionic Framework, Bootstrap, and LESS."                   
+                },
+                {
+                    "title": "Preliminary acceptance to the <span class='focus'>SpaceX</span> Internship Program",
+                    "description": "I was one of the 15 high school seniors selected in 2013 for SpaceX's inaugural internship program for FIRST FRC and FTC students."                   
+                },
+                {
+                    "title": "Cadet Non-Commissioned Officer (NCO) of the Year Award",
+                    "description": "This award is given to only one cadet per year in Missouri who has demonstrated outstanding leadership and management skills, and has made profound and lasting contributions to the organization’s aerospace education and cadet programs."                   
+                },
+                {
+                    "title": "Missouri Delegate - NYSC",
+                    "description": "I was one of two students in Missouri to be selected as a delegate for the National Youth Science Camp—an all-expenses paid, month-long, residential science camp that brings together the best and brightest minds from around the world."                   
+                },
+                {
+                    "title": "Outstanding Student Award (Presidential Scholar)",
+                    "description": "This award is given to academically outstanding students who graduate with a perfect <span class='focus'>4.0 GPA</span> from the Metropolitan Community College in Kansas City, Missouri."                   
+                }
+            ]
         }
-    ],
-    "message": "heyyyy people"
+    ]
 }

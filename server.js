@@ -14,14 +14,14 @@ app.use('/thegoodword', function(req, res) {
 	res.end();
 })
 
-app.use('/template', function(req, res){
+app.use('/resume', function(req, res){
     var myData;
     fs.readFile('data/resume.json', 'utf8', function (err,data) {
         if (err) {
             return console.log(err);
         }
         myData = JSON.parse(data);
-        res.render('template', myData);
+        res.render('resume', myData);
         res.end();
     });
     
