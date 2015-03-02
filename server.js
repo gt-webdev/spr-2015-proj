@@ -3,9 +3,10 @@ var express = require('express');
 var config = require('./config');
 var fs = require('fs')
 
-
 // Create the express app
 var app = express();
+
+// use ejs as view engine
 app.set('view engine', 'ejs')
 
 // Other routes (middleware)
