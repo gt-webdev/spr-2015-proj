@@ -2,6 +2,12 @@
 var express = require('express');
 var config = require('./config');
 var fs = require('fs')
+var mongodb = require('mongodb');
+var server = new mongodb.Server('127.0.0.1', 27017, {});
+var client = new mongodb.Db('temp', server, {w:1});
+
+
+
 
 // Create the express app
 var app = express();
@@ -25,6 +31,20 @@ app.use('/resume', function(req, res){
         res.render('resume', myData);
         res.end();
     });
+    // client.open(function(err) {
+    //   if (err) throw err;
+    //   client.collection('json', function(err, collection) {
+    //     if (err) throw err;
+    //     console.log('We are now able to perform queries.');
+    //     collection.findOne(function(err,result) {
+    //         // console.log(result);
+    //         res.render('resume', result);
+    //         res.end();
+    //     })
+
+    //   });
+    // });
+    
     
 })
 
