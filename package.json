@@ -6,7 +6,8 @@
   "dependencies": {
     "mongodb": "*",
     "express": "^4.11.2",
-    "ejs": "*"
+    "ejs": "*",
+    "mongodb": "*"
   },
   "engines": {
     "node": "0.10.x"
