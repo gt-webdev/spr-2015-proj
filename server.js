@@ -6,9 +6,6 @@ var mongodb = require('mongodb');
 var server = new mongodb.Server('127.0.0.1', 27017, {});
 var client = new mongodb.Db('temp', server, {w:1});
 
-
-
-
 // Create the express app
 var app = express();
 
@@ -20,6 +17,49 @@ app.use('/thegoodword', function(req, res) {
 	res.write("TO HELL WITH GEORGIA!!!");
 	res.end();
 })
+
+// REST API
+function setupRestApi(sections) {
+    var readData = function(cb) {
+        fs.readFile('data/rest.json', 'utf8', function (err,data) {
+            if (err) {
+                return cb(err);
+            }
+            cb(err, data);
+        });
+    };
+
+    // Route to full resume
+    app.get('/api', function(req, res) {
+        readData(function(err, data) {
+            if (err) {
+                res.end();
+                return console.log(err);
+            }
+            res.send(data);
+            res.end();
+        });
+    });
+
+    // Routes to resume sections
+    readData(function(err, data) {
+        data = JSON.parse(data);
+        Object.keys(data).forEach(function(section) {
+            app.get('/api/' + section, function(req, res) {
+                readData(function(err, data) {
+                    if (err) {
+                        res.end();
+                        return console.log(err);
+                    }
+                    res.send(JSON.parse(data)[section]);
+                    res.end();
+                });
+            });
+        });
+    });
+}
+
+setupRestApi(['Education', 'Skills', 'Experience', 'Projects', 'Leadership', 'Honors']);
 
 app.use('/resume', function(req, res){
     var myData;
