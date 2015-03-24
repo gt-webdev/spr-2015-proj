@@ -50,6 +50,20 @@ module.exports = function(resumeData) {
 	            res.end();
 	        });
 
+	        router.post('/' + section + '/:id', function(req, res) {
+	            if (!req.params.id) return req.sendStatus(400);
+	            
+	            var updatedItem = resumeData[section][req.params.id];
+	            for(key in req.query) {
+	            	var val = req.query[key];
+	            	updatedItem[key] = val;
+	            }
+	            resumeData[section][req.params.id] = updatedItem;
+	            writeData(resumeData);
+
+	            res.end();
+	        });
+
 	        router.delete('/' + section + '/:id', function(req, res) {
 	            if (!req.params.id) return req.sendStatus(400);
 
