@@ -72,7 +72,7 @@ function setupRestApi() {
 
             router.post('/' + section, function(req, res) {
                 if (!req.body) return req.sendStatus(400);
-                
+
                 var newObject = req.body;
                 newObject._id = resumeData[section].length;
                 resumeData[section].push(newObject);
@@ -80,6 +80,16 @@ function setupRestApi() {
 
                 res.end();
             });
+
+            router.delete('/' + section + '/:id', function(req, res) {
+                if (!req.params.id) return req.sendStatus(400);
+
+                resumeData[section] = resumeData[section].filter(function (subsection) {
+                    return subsection._id != req.params.id;
+                });
+
+                res.end();
+            })
         });
     });
 }
