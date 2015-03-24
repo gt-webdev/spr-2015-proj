@@ -1,6 +1,7 @@
 // Import express and the server configuration file
 var express = require('express');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var restrouter = require('./restrouter');
 var config = require('./config');
 var fs = require('fs')
 var mongodb = require('mongodb');
@@ -10,7 +11,6 @@ var resumeData = JSON.parse(fs.readFileSync("data/rest.json", "utf8"));
 
 // Create the express app
 var app = express();
-var router = express.Router();
 
 // use ejs as view engine
 app.set('view engine', 'ejs')
@@ -24,79 +24,7 @@ app.use('/thegoodword', function(req, res) {
 	res.end();
 })
 
-// REST API
-function setupRestApi() {
-    var readData = function(cb) {
-        cb(null, resumeData);
-    }
-
-    var writeData = function(data) {
-        //fs.writeFile('data/rest.json', JSON.stringify(data));
-    }
-    // var readData = function(cb) {
-    //     client.collection('myresumes', function(err, collection) {
-    //         if (err) throw err;
-    //         collection.findOne(function(err,result) {
-    //             cb(err, result);
-    //         });
-    //     });
-    // };
-
-    // Route to full resume
-    router.get('/', function(req, res) {
-        readData(function(err, data) {
-            if (err) {
-                res.end();
-                return console.log(err);
-            }
-            res.send(data);
-            res.end();
-        });
-    });
-
-    // Routes to resume sections
-    readData(function(err, data) {
-        Object.keys(data).forEach(function(section) {
-            console.log(section);
-            router.get('/' + section, function(req, res) {
-                readData(function(err, data) {
-                    if (err) {
-                        res.end();
-                        return console.log(err);
-                    }
-
-                    res.send(data[section]);
-                    res.end();
-                });
-            });
-
-            router.post('/' + section, function(req, res) {
-                if (!req.body) return req.sendStatus(400);
-
-                var newObject = req.body;
-                newObject._id = resumeData[section].length;
-                resumeData[section].push(newObject);
-                writeData();
-
-                res.end();
-            });
-
-            router.delete('/' + section + '/:id', function(req, res) {
-                if (!req.params.id) return req.sendStatus(400);
-
-                resumeData[section] = resumeData[section].filter(function (subsection) {
-                    return subsection._id != req.params.id;
-                });
-
-                res.end();
-            })
-        });
-    });
-}
-
-setupRestApi();
-
-app.use('/api', router);
+app.use('/api', restrouter(resumeData));
 
 app.use('/resume', function(req, res){
     resumeData.sections = ['Education', 'Skills', 'Experience', 'Projects', 'Leadership', 'Honors'];
@@ -107,6 +35,8 @@ app.use('/resume', function(req, res){
 
     delete resumeData.sections;
 
+    // Connecting to Database
+    // ----------------------
     // client.open(function(err) {
     //   if (err) throw err;
 
