@@ -1,16 +1,30 @@
 {
+    "Profile": {
+        "name": "George Burdell",
+        "motto": "Tinkerer, Designer, Developer",
+        "description": "I'm a programmer and designer based in Atlanta, GA. I love building beautiful and responsive applications using the latest web technologies.",
+        "picture": "images/george.jpg",
+        "email": "georgeburdell@gatech.edu",
+        "phone": "555-137-1467",
+        "github": "",
+        "linkedin": "",
+        "twitter": "",
+        "googleplus": ""
+    },
 	"Education": [
         {
             "title": "Georgia Institute of Technology",
             "startDate": "2013-08-01T01:00:00.000Z",
             "endDate": "2014-03-23T13:15:00.000Z",
-            "description": "B.S. Computer Science, Information Internetworks and Media"                   
+            "description": "B.S. Computer Science, Information Internetworks and Media",
+            "sortIndex": 0                
         },
         {
             "title": "Metropolitian Community College",
             "startDate": "2008-08-01T01:00:00.000Z",
             "endDate": "2012-05-01T13:15:00.000Z",
-            "description": "Associate Degree in Information Systems<br>Associate Degree in Computer Science"                   
+            "description": "Associate Degree in Information Systems<br>Associate Degree in Computer Science",
+            "sortIndex": 1
         }
     ],
     "Skills": [
@@ -139,68 +153,81 @@
             "subtitle": "Beautiful hymnal reader for Android and the web.",
             "image": "images/open-hymnal-thumb.jpg",
             "imageLink": "http://lsmhymnal.tk/",
-            "description": "A beautiful e-reader for the LSM hymnal with quick navigation features and a beautiful user interface. Bookmark your favorite hymns and customize the interface with full-screen, dark and light viewing modes."                   
+            "description": "A beautiful e-reader for the LSM hymnal with quick navigation features and a beautiful user interface. Bookmark your favorite hymns and customize the interface with full-screen, dark and light viewing modes.",
+            "sortIndex": 0
         },
         {
             "title": "Teleop Catalyst for ROBOTC",
             "subtitle": "Programming has never been easier.",
             "image": "images/teleop-catalyst-thumb.jpg",
             "imageLink": "http://tituswoo.com/project/catalyst/",
-            "description": "Tele-op Catalyst makes it stupidly easy to create robust teleop (remote control) programs for the FIRST Tech Challenge using a simple but powerful \"click, command, create\" workflow. With Catalyst, you can get your robot running in minutes, with little to no programming experience."                   
+            "description": "Tele-op Catalyst makes it stupidly easy to create robust teleop (remote control) programs for the FIRST Tech Challenge using a simple but powerful \"click, command, create\" workflow. With Catalyst, you can get your robot running in minutes, with little to no programming experience.",
+            "sortIndex": 1
         },
         {
             "title": "The Turing Game",
             "subtitle": "Helping people explore issues of identity and stereotypes.",
             "image": "images/turing-game-thumb.jpg",
             "imageLink": "http://turing.gatech.edu/",
-            "description": "I overhauled the visual aesthetic and core user experience of a Georgia Tech research project, creating a beautiful and intuitive experience that people love using."                   
+            "description": "I overhauled the visual aesthetic and core user experience of a Georgia Tech research project, creating a beautiful and intuitive experience that people love using.",
+            "sortIndex": 2
         },
         {
             "title": "Team Up Next",
             "subtitle": "Experience the awesome.",
             "image": "images/up-next-thumb.jpg",
             "imageLink": "http://teamupnext.com/",
-            "description": "I produced a wide range of promotional and branding material for my robotics team in high school, including: the logo, banners, motion graphics, website theme, social media materials, Chairman's Video, Safety Animation Video, stationary, and more."                   
+            "description": "I produced a wide range of promotional and branding material for my robotics team in high school, including: the logo, banners, motion graphics, website theme, social media materials, Chairman's Video, Safety Animation Video, stationary, and more.",
+            "sortIndex": 3
         }
     ],
     "Leadership": [
         {
             "title": "<span class='focus'>Technical Director</span>, GT Web Dev",
-            "description": "I give talks on a variety of web development topics, ranging from the basics of HTML and CSS to advanced topics like building and consuming RESTful web services and making SPA apps. I'm also heavily involved in curriculum development and planning for each semester's talks and events."                   
+            "description": "I give talks on a variety of web development topics, ranging from the basics of HTML and CSS to advanced topics like building and consuming RESTful web services and making SPA apps. I'm also heavily involved in curriculum development and planning for each semester's talks and events.",
+            "sortIndex": 0
         },
         {
             "title": "Cadet Commander, Aircraft Maintenance and Manufacturing Academy",
-            "description": "I lead and organized a national week-long, residential academy that taught participants about aircraft manufacturing and maintenance on the live production floor. I managed, coordinated, and organized transportation, scheduling, activities, housing, meals, paperwork, special guests, press releases, and a plethora of other logistical tasks. The academy was very successful and lead to an award."                   
+            "description": "I lead and organized a national week-long, residential academy that taught participants about aircraft manufacturing and maintenance on the live production floor. I managed, coordinated, and organized transportation, scheduling, activities, housing, meals, paperwork, special guests, press releases, and a plethora of other logistical tasks. The academy was very successful and lead to an award.",
+            "sortIndex": 1
         },
         {
             "title": "Cadet Commander, Harry S. Truman Composite Squadron",
-            "description": "I lead a squadron of cadets, organized cadet programs, maintained discipline and professionalism, and restructured the squadron to significantly increase engagement and boost attendance. I also co-developed the aerospace education curriculum (which included creating an interactive quiz application, lecture material, activities, handouts, and activities)."                   
+            "description": "I lead a squadron of cadets, organized cadet programs, maintained discipline and professionalism, and restructured the squadron to significantly increase engagement and boost attendance. I also co-developed the aerospace education curriculum (which included creating an interactive quiz application, lecture material, activities, handouts, and activities).",
+            "sortIndex": 2
         },
         {
             "title": "Team Image & Chairman's Team Leader, Up Next Robotics",
-            "description": "I created the core branding for a robotics team, including everything from business cards, to snazzy video intros to a website theme, and produced a 3D animated safety video entered in a competition."                   
+            "description": "I created the core branding for a robotics team, including everything from business cards, to snazzy video intros to a website theme, and produced a 3D animated safety video entered in a competition.",
+            "sortIndex": 3
         }
     ],
     "Honors": [
         {
             "title": "Tyler Tech - FedEx Day 2nd Place Winner",
-            "description": "I developed a cross-platform, hybrid mobile application that leverages the powerful EnerGov RESTful API I worked on during the internship. I also developed an AngularJS directive that transforms tabular data into a fully responsive, touch friendly grid, complete with toggle controls and intelligent auto-switching based on screen size. Technologies used: JavaScript, AngularJS, Ionic Framework, Bootstrap, and LESS."                   
+            "description": "I developed a cross-platform, hybrid mobile application that leverages the powerful EnerGov RESTful API I worked on during the internship. I also developed an AngularJS directive that transforms tabular data into a fully responsive, touch friendly grid, complete with toggle controls and intelligent auto-switching based on screen size. Technologies used: JavaScript, AngularJS, Ionic Framework, Bootstrap, and LESS.",
+            "sortIndex": 0
         },
         {
             "title": "Preliminary acceptance to the <span class='focus'>SpaceX</span> Internship Program",
-            "description": "I was one of the 15 high school seniors selected in 2013 for SpaceX's inaugural internship program for FIRST FRC and FTC students."                   
+            "description": "I was one of the 15 high school seniors selected in 2013 for SpaceX's inaugural internship program for FIRST FRC and FTC students.",
+            "sortIndex": 1
         },
         {
             "title": "Cadet Non-Commissioned Officer (NCO) of the Year Award",
-            "description": "This award is given to only one cadet per year in Missouri who has demonstrated outstanding leadership and management skills, and has made profound and lasting contributions to the organization’s aerospace education and cadet programs."                   
+            "description": "This award is given to only one cadet per year in Missouri who has demonstrated outstanding leadership and management skills, and has made profound and lasting contributions to the organization’s aerospace education and cadet programs.",
+            "sortIndex": 2
         },
         {
             "title": "Missouri Delegate - NYSC",
-            "description": "I was one of two students in Missouri to be selected as a delegate for the National Youth Science Camp—an all-expenses paid, month-long, residential science camp that brings together the best and brightest minds from around the world."                   
+            "description": "I was one of two students in Missouri to be selected as a delegate for the National Youth Science Camp—an all-expenses paid, month-long, residential science camp that brings together the best and brightest minds from around the world.",
+            "sortIndex": 3
         },
         {
             "title": "Outstanding Student Award (Presidential Scholar)",
-            "description": "This award is given to academically outstanding students who graduate with a perfect <span class='focus'>4.0 GPA</span> from the Metropolitan Community College in Kansas City, Missouri."                   
+            "description": "This award is given to academically outstanding students who graduate with a perfect <span class='focus'>4.0 GPA</span> from the Metropolitan Community College in Kansas City, Missouri.",
+            "sortIndex": 4
         }
     ]
 }

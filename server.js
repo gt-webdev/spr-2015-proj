@@ -4,7 +4,7 @@ var config = require('./config');
 var fs = require('fs')
 var mongodb = require('mongodb');
 var server = new mongodb.Server('127.0.0.1', 27017, {});
-var client = new mongodb.Db('temp', server, {w:1});
+var client = new mongodb.Db('test', server, {w:1});
 
 // Create the express app
 var app = express();
@@ -19,15 +19,18 @@ app.use('/thegoodword', function(req, res) {
 })
 
 // REST API
-function setupRestApi(sections) {
+function setupRestApi() {
     var readData = function(cb) {
-        fs.readFile('data/rest.json', 'utf8', function (err,data) {
-            if (err) {
-                return cb(err);
-            }
-            cb(err, data);
-        });
-    };
+        fs.readFile("data/rest.json", 'utf8', cb);
+    }
+    // var readData = function(cb) {
+    //     client.collection('myresumes', function(err, collection) {
+    //         if (err) throw err;
+    //         collection.findOne(function(err,result) {
+    //             cb(err, result);
+    //         });
+    //     });
+    // };
 
     // Route to full resume
     app.get('/api', function(req, res) {
@@ -51,7 +54,9 @@ function setupRestApi(sections) {
                         res.end();
                         return console.log(err);
                     }
-                    res.send(JSON.parse(data)[section]);
+
+                    data = JSON.parse(data);
+                    res.send(data[section]);
                     res.end();
                 });
             });
@@ -59,26 +64,32 @@ function setupRestApi(sections) {
     });
 }
 
-setupRestApi(['Education', 'Skills', 'Experience', 'Projects', 'Leadership', 'Honors']);
+setupRestApi();
 
 app.use('/resume', function(req, res){
     var myData;
-    fs.readFile('data/resume.json', 'utf8', function (err,data) {
+    fs.readFile('data/rest.json', 'utf8', function (err,data) {
         if (err) {
             return console.log(err);
         }
         myData = JSON.parse(data);
-        res.render('resume', myData);
+        myData.sections = ['Education', 'Skills', 'Experience', 'Projects', 'Leadership', 'Honors'];
+        res.render('resume', {
+            data: myData
+        });
         res.end();
     });
     // client.open(function(err) {
     //   if (err) throw err;
-    //   client.collection('json', function(err, collection) {
+
+    //   client.collection('myresumes', function(err, collection) {
     //     if (err) throw err;
     //     console.log('We are now able to perform queries.');
     //     collection.findOne(function(err,result) {
-    //         // console.log(result);
-    //         res.render('resume', result);
+    //         result.sections = ['Education', 'Skills', 'Experience', 'Projects', 'Leadership', 'Honors'];
+    //         res.render('resume', {
+    //             data: result
+    //         });
     //         res.end();
     //     })
 

@@ -1,0 +1,19 @@
+<section class="wow fadeInUp">
+    <% ['Education', 'Skills'].forEach(function(sectionName, index){%>
+    
+        <div class="column">
+            <%include singleSection%>
+        </div>
+
+    <% });%>
+</section>
+
+<% data.sections.forEach(function(sectionName, index){%>
+    <% if(sectionName != "Education" && sectionName != "Skills") {%>
+
+        <section class="wow fadeInUp">
+            <%include singleSection%>
+        </section>
+
+    <% }%>
+<% });%>
