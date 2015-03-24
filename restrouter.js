@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs')
 
 module.exports = function(resumeData) {
 	var router = express.Router();
@@ -8,7 +9,7 @@ module.exports = function(resumeData) {
 	}
 
 	var writeData = function(data) {
-	    //fs.writeFile('data/rest.json', JSON.stringify(data));
+	    fs.writeFile('data/rest.json', JSON.stringify(resumeData, null, 4));
 	}
 
 	// Route to full resume
