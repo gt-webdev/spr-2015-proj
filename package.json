@@ -4,9 +4,9 @@
   "description": "This website has my portfolio and will be used to fascinate recruiters.",
   "main": "server.js",
   "dependencies": {
-    "mongodb": "*",
-    "express": "^4.11.2",
+    "body-parser": "^1.12.2",
     "ejs": "*",
+    "express": "^4.11.2",
     "mongodb": "*"
   },
   "engines": {
