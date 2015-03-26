@@ -3,80 +3,107 @@ var fs = require('fs')
 
 module.exports = function(resumeData) {
 	var router = express.Router();
-
-	var readData = function(cb) {
-	    cb(null, resumeData);
-	}
+	var id_counters = {};    // Used to generate object ids
 
 	var writeData = function(data) {
 	    fs.writeFile('data/rest.json', JSON.stringify(resumeData, null, 4));
 	}
 
+	// Initialize id_counters with the 1 + maxId used in each array.
+	Object.keys(resumeData).forEach(function(section) {
+		var maxId = function(objects) {
+			if (Object.prototype.toString.call(objects) === '[object Array]') {
+				return objects.reduce(function(previous, object) {
+					return ( previous > object._id ? previous : object._id );
+				});
+			} else {
+				return objects._id;
+			}
+		};
+
+		if (section == "Skills") {
+			id_counters[section] = {};
+			resumeData[section].forEach(function(skillset) {
+				id_counters[section][skillset.title] = 1 + maxId(skillset.items);
+			});
+		} else {
+			id_counters[section] = 1 + maxId(resumeData[section]);
+		}
+	});
+
 	// Route to full resume
 	router.get('/', function(req, res) {
-	    readData(function(err, data) {
-	        if (err) {
-	            res.end();
-	            return console.log(err);
-	        }
-	        res.send(data);
-	        res.end();
-	    });
+        res.send(resumeData);
+        res.end();
 	});
 
 	// Routes to resume sections
-	readData(function(err, data) {
-	    Object.keys(data).forEach(function(section) {
-	        console.log(section);
-	        router.get('/' + section, function(req, res) {
-	            readData(function(err, data) {
-	                if (err) {
-	                    res.end();
-	                    return console.log(err);
-	                }
+    Object.keys(resumeData).forEach(function(section) {
 
-	                res.send(data[section]);
-	                res.end();
-	            });
-	        });
+    	// Get section
+        router.get('/' + section, function(req, res) {
+            res.send(resumeData[section]);
+            res.end();
+        });
 
-	        router.post('/' + section, function(req, res) {
-	            if (!req.body) return req.sendStatus(400);
+        // Get subsection
+        router.get('/' + section + '/:id', function(req, res) {
+        	var id = req.params.id;
 
-	            var newObject = req.body;
-	            newObject._id = resumeData[section].length;
-	            resumeData[section].push(newObject);
-	            writeData();
+        	resumeData[section].forEach(function(subsection) {
+        		if (subsection._id == id) {
+        			res.send(subsection);
+        		}
+        	});
 
-	            res.end();
-	        });
+        	res.end();
+        });
 
-	        router.post('/' + section + '/:id', function(req, res) {
-	            if (!req.params.id) return req.sendStatus(400);
-	            
-	            var updatedItem = resumeData[section][req.params.id];
-	            for(key in req.query) {
-	            	var val = req.query[key];
-	            	updatedItem[key] = val;
-	            }
-	            resumeData[section][req.params.id] = updatedItem;
-	            writeData(resumeData);
+        // Insert subsection
+        router.post('/' + section, function(req, res) {
+            if (!req.body) return req.sendStatus(400);
 
-	            res.end();
-	        });
+            var newObject = req.body;
+            newObject._id = id_counters[section]++;
+            resumeData[section].push(newObject);
+            res.send(newObject);
+            writeData();
 
-	        router.delete('/' + section + '/:id', function(req, res) {
-	            if (!req.params.id) return req.sendStatus(400);
+            res.end();
+        });
 
-	            resumeData[section] = resumeData[section].filter(function (subsection) {
-	                return subsection._id != req.params.id;
-	            });
-	            writeData();
+        // Update subsection
+        router.put('/' + section + '/:id', function(req, res) {
+        	if (!req.body) return req.sendStatus(400);
 
-	            res.end();
-	        })
-	    });
-	});
+        	var id = req.params.id;
+        	var object = req.body;
+
+        	resumeData[section].forEach(function(subsection) {
+        		if (subsection._id == id) {
+        			Object.keys(object).forEach(function (key) {
+        				subsection[key] = object[key];
+        			});
+
+        			res.send(subsection);
+        			writeData();
+        		}
+        	});
+
+        	res.end();
+        });
+
+        // Delete subsection
+        router.delete('/' + section + '/:id', function(req, res) {
+
+            resumeData[section] = resumeData[section].filter(function (subsection) {
+                return subsection._id != req.params.id;
+            });
+            writeData();
+
+            res.end();
+        })
+    });
 	
 	return router;
 }
