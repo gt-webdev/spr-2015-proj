@@ -1,4 +1,5 @@
 var express = require('express');
+var fs = require('fs')
 
 module.exports = function(resumeData) {
 	var router = express.Router();
@@ -8,7 +9,7 @@ module.exports = function(resumeData) {
 	}
 
 	var writeData = function(data) {
-	    //fs.writeFile('data/rest.json', JSON.stringify(data));
+	    fs.writeFile('data/rest.json', JSON.stringify(resumeData, null, 4));
 	}
 
 	// Route to full resume
@@ -46,6 +47,20 @@ module.exports = function(resumeData) {
 	            newObject._id = resumeData[section].length;
 	            resumeData[section].push(newObject);
 	            writeData();
+
+	            res.end();
+	        });
+
+	        router.post('/' + section + '/:id', function(req, res) {
+	            if (!req.params.id) return req.sendStatus(400);
+	            
+	            var updatedItem = resumeData[section][req.params.id];
+	            for(key in req.query) {
+	            	var val = req.query[key];
+	            	updatedItem[key] = val;
+	            }
+	            resumeData[section][req.params.id] = updatedItem;
+	            writeData(resumeData);
 
 	            res.end();
 	        });
