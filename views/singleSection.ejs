@@ -1,0 +1,33 @@
+<%if (sectionName == "Skills"){%>
+    <h2><a class="anchor" id="projects"><%= sectionName%></a></h2>
+    <% data[sectionName].forEach(function(skillCategory){%>
+        <h3>
+            <%= skillCategory.title%>
+        </h3>
+        <p>
+            <%skillCategory.items.forEach(function(item, index){%>
+                <span class="progress"><span class="<%=item.level%>"></span><%-item.name%></span>
+                <%if (skillCategory.items.length != (index + 1)){%>
+                    ,
+                <%}%>
+            <%})%>
+        </p>
+    <%})%>
+<%} else {%>
+    <h2><a class="anchor" id="projects"><%=sectionName%></a></h2>
+    <% data[sectionName].forEach(function(item, index){%>
+        <div class="media wow fadeInUp">
+            <% if (item.image) {%>
+                <a href="<%=item.imageLink%>" target="_blank"><img src="<%=item.image%>" class="media-thumb"></a>
+            <%}%>
+
+            <h3><%-item.title%></h3>
+
+            <p class="small"><!--TODO--></p>
+
+            <p>
+                <%-item.description%>
+            </p>
+        </div>
+    <%});%>
+<%}%>

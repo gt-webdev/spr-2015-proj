@@ -1,0 +1,274 @@
+{
+    "Profile": {
+        "_id": 0,
+        "name": "George Burdell",
+        "motto": "Tinkerer, Designer, Developer",
+        "description": "I'm a programmer and designer based in Atlanta, GA. I love building beautiful and responsive applications using the latest web technologies.",
+        "picture": "images/george.jpg",
+        "email": "georgeburdell@gatech.edu",
+        "phone": "555-137-1467",
+        "github": "",
+        "linkedin": "",
+        "twitter": "",
+        "googleplus": ""
+    },
+    "Education": [
+        {
+            "_id": 0,
+            "title": "Georgia Institute of Technology",
+            "startDate": "2013-08-01T01:00:00.000Z",
+            "endDate": "2014-03-23T13:15:00.000Z",
+            "description": "B.S. Computer Science, Information Internetworks and Media",
+            "sortIndex": 0
+        },
+        {
+            "_id": 1,
+            "title": "Metropolitian Community College",
+            "startDate": "2008-08-01T01:00:00.000Z",
+            "endDate": "2012-05-01T13:15:00.000Z",
+            "description": "Associate Degree in Information Systems<br>Associate Degree in Computer Science",
+            "sortIndex": 1
+        }
+    ],
+    "Skills": [
+        {
+            "title": "Technical",
+            "items": [
+                {
+                    "_id": 0,
+                    "name": "JavaScript",
+                    "level": "expert"
+                },
+                {
+                    "_id": 1,
+                    "name": "PHP 5",
+                    "level": "intermediate"
+                },
+                {
+                    "_id": 2,
+                    "name": "HTML5",
+                    "level": "expert"
+                },
+                {
+                    "_id": 3,
+                    "name": "CSS3",
+                    "level": "expert"
+                },
+                {
+                    "_id": 4,
+                    "name": "Java",
+                    "level": "intermediate"
+                },
+                {
+                    "_id": 5,
+                    "name": "C#",
+                    "level": "beginner"
+                },
+                {
+                    "_id": 6,
+                    "name": "Jade",
+                    "level": "beginner"
+                },
+                {
+                    "_id": 7,
+                    "name": "TypeScript",
+                    "level": "intermediate"
+                },
+                {
+                    "_id": 8,
+                    "name": "LESS",
+                    "level": "intermediate"
+                },
+                {
+                    "_id": 9,
+                    "name": "SCSS",
+                    "level": "expert"
+                },
+                {
+                    "_id": 10,
+                    "name": "Stylus",
+                    "level": "beginner"
+                },
+                {
+                    "_id": 11,
+                    "name": "AngularJS",
+                    "level": "expert"
+                },
+                {
+                    "_id": 12,
+                    "name": "jQuery",
+                    "level": "intermediate"
+                },
+                {
+                    "_id": 13,
+                    "name": "IonicFramework",
+                    "level": "intermediate"
+                },
+                {
+                    "_id": 14,
+                    "name": "Cordova",
+                    "level": "beginner"
+                },
+                {
+                    "_id": 15,
+                    "name": "Node.js",
+                    "level": "intermediate"
+                },
+                {
+                    "_id": 16,
+                    "name": "ASP.NET MVC.",
+                    "level": "beginner"
+                }
+            ]
+        },
+        {
+            "title": "Design",
+            "items": [
+                {
+                    "_id": 0,
+                    "name": "Photoshop",
+                    "level": "expert"
+                },
+                {
+                    "_id": 1,
+                    "name": "Illustrator",
+                    "level": "expert"
+                },
+                {
+                    "_id": 2,
+                    "name": "InDesign",
+                    "level": "expert"
+                },
+                {
+                    "_id": 3,
+                    "name": "Premier Pro",
+                    "level": "intermediate"
+                },
+                {
+                    "_id": 4,
+                    "name": "After Effects",
+                    "level": "intermediate"
+                }
+            ]
+        }
+    ],
+    "Experience": [
+        {
+            "_id": 0,
+            "title": "Software Developer Intern, Tyler Technologies",
+            "startDate": "2014-05-01T01:00:00.000Z",
+            "endDate": "2014-08-23T13:15:00.000Z",
+            "description": "I made a RESTful API for a large Silverlight application with a C# back-end. I also worked on a responsive thin client written in HTML5/CSS/JavaScript which uses the aforementioned API. The core business logic was written in C#, with unit testing done in Jasmine and the MS Unit Testing Framework. The thin-client web app was written in TypeScript, AngularJS, jQuery, Bootstrap, and LESS."
+        },
+        {
+            "_id": 1,
+            "title": "Website Designer and Developer, Georgia Tech",
+            "startDate": "2013-01-01T01:00:00.000Z",
+            "endDate": "2014-01-01T13:15:00.000Z",
+            "description": "I created a beautiful, engaging, and responsive website and user experience for a web-based project written in PHP. I also wrote a sophisticated PHP survey for a research study."
+        },
+        {
+            "_id": 2,
+            "title": "Computer and IT Coordinator, National Youth Science Foundation",
+            "startDate": "2013-05-01T01:00:00.000Z",
+            "endDate": "2013-08-23T13:15:00.000Z",
+            "description": "I coordinated and provided networking, computer access, and IT support services for a month-long, prestigious science camp. My responsibilities also included mentoring students, teaching, organizing, and overseeing classes."
+        }
+    ],
+    "Projects": [
+        {
+            "_id": 0,
+            "title": "LSM Hymnal",
+            "subtitle": "Beautiful hymnal reader for Android and the web.",
+            "image": "images/open-hymnal-thumb.jpg",
+            "imageLink": "http://lsmhymnal.tk/",
+            "description": "A beautiful e-reader for the LSM hymnal with quick navigation features and a beautiful user interface. Bookmark your favorite hymns and customize the interface with full-screen, dark and light viewing modes.",
+            "sortIndex": 0
+        },
+        {
+            "_id": 1,
+            "title": "Teleop Catalyst for ROBOTC",
+            "subtitle": "Programming has never been easier.",
+            "image": "images/teleop-catalyst-thumb.jpg",
+            "imageLink": "http://tituswoo.com/project/catalyst/",
+            "description": "Tele-op Catalyst makes it stupidly easy to create robust teleop (remote control) programs for the FIRST Tech Challenge using a simple but powerful \"click, command, create\" workflow. With Catalyst, you can get your robot running in minutes, with little to no programming experience.",
+            "sortIndex": 1
+        },
+        {
+            "_id": 2,
+            "title": "The Turing Game",
+            "subtitle": "Helping people explore issues of identity and stereotypes.",
+            "image": "images/turing-game-thumb.jpg",
+            "imageLink": "http://turing.gatech.edu/",
+            "description": "I overhauled the visual aesthetic and core user experience of a Georgia Tech research project, creating a beautiful and intuitive experience that people love using.",
+            "sortIndex": 2
+        },
+        {
+            "_id": 3,
+            "title": "Team Up Next",
+            "subtitle": "Experience the awesome.",
+            "image": "images/up-next-thumb.jpg",
+            "imageLink": "http://teamupnext.com/",
+            "description": "I produced a wide range of promotional and branding material for my robotics team in high school, including: the logo, banners, motion graphics, website theme, social media materials, Chairman's Video, Safety Animation Video, stationary, and more.",
+            "sortIndex": 3
+        }
+    ],
+    "Leadership": [
+        {
+            "_id": 0,
+            "title": "<span class='focus'>Technical Director</span>, GT Web Dev",
+            "description": "I give talks on a variety of web development topics, ranging from the basics of HTML and CSS to advanced topics like building and consuming RESTful web services and making SPA apps. I'm also heavily involved in curriculum development and planning for each semester's talks and events.",
+            "sortIndex": 0
+        },
+        {
+            "_id": 1,
+            "title": "Cadet Commander, Aircraft Maintenance and Manufacturing Academy",
+            "description": "I lead and organized a national week-long, residential academy that taught participants about aircraft manufacturing and maintenance on the live production floor. I managed, coordinated, and organized transportation, scheduling, activities, housing, meals, paperwork, special guests, press releases, and a plethora of other logistical tasks. The academy was very successful and lead to an award.",
+            "sortIndex": 1
+        },
+        {
+            "_id": 2,
+            "title": "Cadet Commander, Harry S. Truman Composite Squadron",
+            "description": "I lead a squadron of cadets, organized cadet programs, maintained discipline and professionalism, and restructured the squadron to significantly increase engagement and boost attendance. I also co-developed the aerospace education curriculum (which included creating an interactive quiz application, lecture material, activities, handouts, and activities).",
+            "sortIndex": 2
+        },
+        {
+            "_id": 3,
+            "title": "Team Image & Chairman's Team Leader, Up Next Robotics",
+            "description": "I created the core branding for a robotics team, including everything from business cards, to snazzy video intros to a website theme, and produced a 3D animated safety video entered in a competition.",
+            "sortIndex": 3
+        }
+    ],
+    "Honors": [
+        {
+            "_id": 0,
+            "title": "Tyler Tech - FedEx Day 2nd Place Winner",
+            "description": "I developed a cross-platform, hybrid mobile application that leverages the powerful EnerGov RESTful API I worked on during the internship. I also developed an AngularJS directive that transforms tabular data into a fully responsive, touch friendly grid, complete with toggle controls and intelligent auto-switching based on screen size. Technologies used: JavaScript, AngularJS, Ionic Framework, Bootstrap, and LESS.",
+            "sortIndex": 0
+        },
+        {
+            "_id": 1,
+            "title": "Preliminary acceptance to the <span class='focus'>SpaceX</span> Internship Program",
+            "description": "I was one of the 15 high school seniors selected in 2013 for SpaceX's inaugural internship program for FIRST FRC and FTC students.",
+            "sortIndex": 1
+        },
+        {
+            "_id": 2,
+            "title": "Cadet Non-Commissioned Officer (NCO) of the Year Award",
+            "description": "This award is given to only one cadet per year in Missouri who has demonstrated outstanding leadership and management skills, and has made profound and lasting contributions to the organization’s aerospace education and cadet programs.",
+            "sortIndex": 2
+        },
+        {
+            "_id": 3,
+            "title": "Missouri Delegate - NYSC",
+            "description": "I was one of two students in Missouri to be selected as a delegate for the National Youth Science Camp—an all-expenses paid, month-long, residential science camp that brings together the best and brightest minds from around the world.",
+            "sortIndex": 3
+        },
+        {
+            "_id": 4,
+            "title": "Outstanding Student Award (Presidential Scholar)",
+            "description": "This award is given to academically outstanding students who graduate with a perfect <span class='focus'>4.0 GPA</span> from the Metropolitan Community College in Kansas City, Missouri.",
+            "sortIndex": 4
+        }
+    ]
+}
