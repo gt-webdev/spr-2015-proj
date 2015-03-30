@@ -43,8 +43,8 @@
             <h2><a class="anchor" id="education">Education</a></h2>
             <div ng-repeat="subsection in education">
                 <h3>{{subsection.title}}</h3>
-                    <p class="small">{{subsection.startDate | date:'MMMM yyyy'}} - {{subsection.endDate | date:'MMMM yyyy'}}</p>
-                    <p>{{subsection.description}}</p>
+                <p class="small">{{subsection.startDate | date:'MMMM yyyy'}} - {{subsection.endDate | date:'MMMM yyyy'}}</p>
+                <p ng-bind-html="subsection.description | sanitize"></p>
             </div>
         </div>
         <div class="column">
@@ -60,9 +60,9 @@
     <section class="wow fadeInUp">
         <h2><a class="anchor" id="experience">Experience</a></h2>
         <div ng-repeat="subsection in experience">
-            <h3>{{subsection.title}}</h3>
+            <h3 ng-bind-html="subsection.title | sanitize"></h3>
             <p class="small">{{subsection.startDate | date:'MMMM yyyy'}} - {{subsection.endDate | date:'MMMM yyyy'}}</p>
-            <p>{{subsection.description}}</p>
+            <p ng-bind-html="subsection.description | sanitize"></p>
         </div>
     </section>
     <section class="wow fadeInUp">
@@ -70,24 +70,24 @@
         <div ng-repeat="subsection in projects">
             <div class="media wow fadeInUp">
                 <a href="{{subsection.imageLink}}" target="_blank"><img src="{{subsection.image}}" class="media-thumb"></a>
-                <h3>{{subsection.title}}</h3>
+                <h3 ng-bind-html="subsection.title | sanitize"></h3>
                 <p class="small">{{subsection.subtitle}}</p>
-                <p>{{subsection.description}}</p>
+                <p ng-bind-html="subsection.description | sanitize"></p>
             </div>
         </div>
     </section>
     <section class="wow fadeInUp">
         <h2><a class="anchor" id="extracurriculars">Leadership</a></h2>
         <div ng-repeat="subsection in leadership">
-            <h3>{{subsection.title}}</h3>
-            <p>{{subsection.description}}</p>
+            <h3 ng-bind-html="subsection.title | sanitize"></h3>
+            <p ng-bind-html="subsection.description | sanitize"></p>
         </div>
     </section>
     <section class="wow fadeInUp">
         <h2><a class="anchor" id="honors">Honors & Awards</a></h2>
         <div ng-repeat="subsection in honors">
-            <h3 ng-bind-html="subsection.title"></h3>
-            <p>{{subsection.description}}</p>
+            <h3 ng-bind-html="subsection.title | sanitize"></h3>
+            <p ng-bind-html="subsection.description | sanitize"></p>
         </div>
     </section>
     <footer class="wow fadeIn" data-wow-delay="1s">

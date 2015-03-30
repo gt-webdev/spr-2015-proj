@@ -1,9 +1,7 @@
 angular.module('GeorgesResume', [])
 .service('Database', [
   '$http',
-  '$q',
   function($http){
-      var sections = ['Education', 'Skills', 'Experience', 'Projects', 'Leadership', 'Honors', 'Profile'];
       this.getData = function() {
           return $http.get('/api/');
       }
@@ -13,7 +11,7 @@ angular.module('GeorgesResume', [])
       this.createSubsection = function(section, data) {
         return $http.post('/api/' + section, data);
       }
-      this.updateSubsection = function(section, data, id) {
+      this.updateSubsection = function(section, id, data) {
         return $http.put('/api/' + section + '/' + id, data);
       }
       this.deleteSubsection = function(section, id) {
@@ -23,7 +21,7 @@ angular.module('GeorgesResume', [])
 .controller('MainController', [
   '$scope',
   'Database',
-  function($scope, Database){
+  function($scope, Database) {
     Database.getData().then(function(response){
       $scope.education = response.data['Education'];
       $scope.profile = response.data['Profile'];
@@ -33,5 +31,9 @@ angular.module('GeorgesResume', [])
       $scope.leadership = response.data['Leadership'];
       $scope.honors = response.data['Honors'];
     });
-   
   }])
+.filter('sanitize',['$sce', function($sce) {
+    return function(htmlcode) {
+      return $sce.trustAsHtml(htmlcode);
+    }
+}]);
