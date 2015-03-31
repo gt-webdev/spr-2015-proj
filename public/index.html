@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <title>George's Resume</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="click-to-edit-directive/app/main.css">
 <body ng-controller="MainController">
 <header>
     <div id="main-nav">
@@ -22,8 +23,8 @@
     <section class="wow fadeInUp">
         <img src="images/george.jpg" class="profile">
         <div class="social">
-            <p class="lead">{{profile.motto}}</p>
-            <p>{{profile.description}}</p>
+            <p class="lead" click-to-edit tag="input" on-complete="updateSubsection('Profile', subsection)" data="profile.motto">{{profile.motto}}</p>
+            <p click-to-edit tag="input" on-complete="updateSubsection('Profile', subsection)" data="profile.description">{{profile.description}}</p>
             <p>Email: <a href="mailto:{{profile.email}}">{{profile.email}}</a><br>Phone: {{profile.phone}}</p>
             <div class="social-icon wow bounceIn" data-wow-delay="0.4s"><a href="https://github.com/" target="_blank">
                 <img src="images/github.png" class="social-icon">
@@ -42,15 +43,15 @@
         <div class="column">
             <h2><a class="anchor" id="education">Education</a></h2>
             <div ng-repeat="subsection in education">
-                <h3>{{subsection.title}}</h3>
+                <h3 click-to-edit tag="input" on-complete="updateSubsection('Education', subsection)" data="subsection.title">{{subsection.title}}</h3>
                 <p class="small">{{subsection.startDate | date:'MMMM yyyy'}} - {{subsection.endDate | date:'MMMM yyyy'}}</p>
-                <p ng-bind-html="subsection.description | sanitize"></p>
+                <p click-to-edit on-complete="updateSubsection('Education', subsection)" data="subsection.description" ng-bind-html="subsection.description | sanitize"></p>
             </div>
         </div>
         <div class="column">
             <h2>Skills</h2>
             <div ng-repeat="subsection in skills">
-                <h3>{{subsection.title}}</h3>
+                <h3 click-to-edit tag="input" on-complete="updateSubsection('Skills', subsection)" data="subsection.title">{{subsection.title}}</h3>
                 <p>
                     <span ng-repeat="skillset in subsection.items"class="progress"><span class="{{skillset.level}}"></span>{{skillset.name}},</span>&nbsp  
                 </p>
@@ -60,9 +61,9 @@
     <section class="wow fadeInUp">
         <h2><a class="anchor" id="experience">Experience</a></h2>
         <div ng-repeat="subsection in experience">
-            <h3 ng-bind-html="subsection.title | sanitize"></h3>
+            <h3  click-to-edit tag="input" on-complete="updateSubsection('Experience', subsection)" data="subsection.title" ng-bind-html="subsection.title | sanitize"></h3>
             <p class="small">{{subsection.startDate | date:'MMMM yyyy'}} - {{subsection.endDate | date:'MMMM yyyy'}}</p>
-            <p ng-bind-html="subsection.description | sanitize"></p>
+            <p click-to-edit on-complete="updateSubsection('Experience', subsection)" data="subsection.description">{{subsection.description }}</p>
         </div>
     </section>
     <section class="wow fadeInUp">
@@ -70,24 +71,24 @@
         <div ng-repeat="subsection in projects">
             <div class="media wow fadeInUp">
                 <a href="{{subsection.imageLink}}" target="_blank"><img src="{{subsection.image}}" class="media-thumb"></a>
-                <h3 ng-bind-html="subsection.title | sanitize"></h3>
-                <p class="small">{{subsection.subtitle}}</p>
-                <p ng-bind-html="subsection.description | sanitize"></p>
+                <h3  click-to-edit tag ="input" on-complete="updateSubsection('Projects', subsection)" data="subsection.title" ng-bind-html="subsection.title | sanitize"></h3>
+                <p  click-to-edit tag="input" on-complete="updateSubsection('Projects', subsection)" data="subsection.subtitle" class="small">{{subsection.subtitle}}</p>
+                <p  click-to-edit on-complete="updateSubsection('Projects', subsection)" data="subsection.description" ng-bind-html="subsection.description | sanitize"></p>
             </div>
         </div>
     </section>
     <section class="wow fadeInUp">
         <h2><a class="anchor" id="extracurriculars">Leadership</a></h2>
         <div ng-repeat="subsection in leadership">
-            <h3 ng-bind-html="subsection.title | sanitize"></h3>
-            <p ng-bind-html="subsection.description | sanitize"></p>
+            <h3  click-to-edit tag="input" on-complete="updateSubsection('Leadership', subsection)" data="subsection.title" ng-bind-html="subsection.title | sanitize"></h3>
+            <p  click-to-edit on-complete="updateSubsection('Leadership', subsection)" data="subsection.description" ng-bind-html="subsection.description | sanitize"></p>
         </div>
     </section>
     <section class="wow fadeInUp">
         <h2><a class="anchor" id="honors">Honors & Awards</a></h2>
         <div ng-repeat="subsection in honors">
-            <h3 ng-bind-html="subsection.title | sanitize"></h3>
-            <p ng-bind-html="subsection.description | sanitize"></p>
+            <h3  click-to-edit tag="input" on-complete="updateSubsection('Honors', subsection)" data="subsection.title" ng-bind-html="subsection.title | sanitize"></h3>
+            <p  click-to-edit on-complete="updateSubsection('Honors', subsection)" data="subsection.description" ng-bind-html="subsection.description | sanitize"></p>
         </div>
     </section>
     <footer class="wow fadeIn" data-wow-delay="1s">
@@ -98,6 +99,7 @@
     <script src="lib/angular.min.js"></script>
     <script src="lib/wow.min.js"></script>
     <script src="scripts/main.js"></script>
+    <script src="click-to-edit-directive/app/click-to-edit.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 </head>

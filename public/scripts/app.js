@@ -1,4 +1,4 @@
-angular.module('GeorgesResume', [])
+angular.module('GeorgesResume', ['tkw'])
 .service('Database', [
   '$http',
   function($http){
@@ -31,6 +31,9 @@ angular.module('GeorgesResume', [])
       $scope.leadership = response.data['Leadership'];
       $scope.honors = response.data['Honors'];
     });
+    $scope.updateSubsection = function(section, subsection){
+      Database.updateSubsection(section, subsection._id, subsection)
+    }
   }])
 .filter('sanitize',['$sce', function($sce) {
     return function(htmlcode) {
