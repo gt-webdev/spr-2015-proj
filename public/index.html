@@ -3,7 +3,7 @@
     <meta charset="UTF-8">
     <title>George's Resume</title>
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="click-to-edit-directive/app/main.css">
+    <link rel="stylesheet" href="styles/click-to-edit.css">
 <body ng-controller="MainController">
 <header>
     <div id="main-nav">
@@ -24,7 +24,7 @@
         <img src="images/george.jpg" class="profile">
         <div class="social">
             <p class="lead" click-to-edit tag="input" on-complete="updateSubsection('Profile', subsection)" data="profile.motto">{{profile.motto}}</p>
-            <p click-to-edit tag="input" on-complete="updateSubsection('Profile', subsection)" data="profile.description">{{profile.description}}</p>
+            <p click-to-edit on-complete="updateSubsection('Profile', subsection)" data="profile.description">{{profile.description}}</p>
             <p>Email: <a href="mailto:{{profile.email}}">{{profile.email}}</a><br>Phone: {{profile.phone}}</p>
             <div class="social-icon wow bounceIn" data-wow-delay="0.4s"><a href="https://github.com/" target="_blank">
                 <img src="images/github.png" class="social-icon">
@@ -99,7 +99,7 @@
     <script src="lib/angular.min.js"></script>
     <script src="lib/wow.min.js"></script>
     <script src="scripts/main.js"></script>
-    <script src="click-to-edit-directive/app/click-to-edit.js"></script>
+    <script src="scripts/click-to-edit.js"></script>
     <script src="scripts/app.js"></script>
 </body>
 </head>

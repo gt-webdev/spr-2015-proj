@@ -1,5 +1,13 @@
-angular.module('GeorgesResume', ['tkw'])
-.service('Database', [
+/*
+  Angular app for George's Resume 
+*/
+angular.module('GeorgesResume', ['tkw']);
+
+
+/*
+  Databse Service for retriving data from the api
+*/
+angular.module('GeorgesResume').service('Database', [
   '$http',
   function($http){
       this.getData = function() {
@@ -8,8 +16,8 @@ angular.module('GeorgesResume', ['tkw'])
       this.getSection = function(section) {
         return $http.get('/api/' + section);
       }   
-      this.createSubsection = function(section, data) {
-        return $http.post('/api/' + section, data);
+      this.updateProfile = function(data) {
+        return $http.put('/api/Profile', data);
       }
       this.updateSubsection = function(section, id, data) {
         return $http.put('/api/' + section + '/' + id, data);
@@ -17,8 +25,13 @@ angular.module('GeorgesResume', ['tkw'])
       this.deleteSubsection = function(section, id) {
          return $http.delete('/api/' + section + '/' + id);
       }
-  }])
-.controller('MainController', [
+  }]);
+
+/*
+  Controller for the main page. Handles passing data from the databse to the
+  scope.
+*/
+angular.module('GeorgesResume').controller('MainController', [
   '$scope',
   'Database',
   function($scope, Database) {
@@ -31,11 +44,21 @@ angular.module('GeorgesResume', ['tkw'])
       $scope.leadership = response.data['Leadership'];
       $scope.honors = response.data['Honors'];
     });
-    $scope.updateSubsection = function(section, subsection){
-      Database.updateSubsection(section, subsection._id, subsection)
+    $scope.updateSubsection = function(section, data){
+	if (section === 'Profile') {
+		Database.updateProfile(data)
+	}
+	else {
+		Database.updateSubsection(section, data._id, data)
+	}
     }
-  }])
-.filter('sanitize',['$sce', function($sce) {
+  }]);
+
+
+/*
+  Sanitizes strings to be treated as embedded html
+*/
+angular.module('GeorgesResume').filter('sanitize',['$sce', function($sce) {
     return function(htmlcode) {
       return $sce.trustAsHtml(htmlcode);
     }
